@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - White Death Style</title>
+    <style>
+        /* White Death Style: Minimalis, putih bersih dengan aksen gelap */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* Putih murni */
+            color: #000000; /* Hitam untuk kontras */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #f8f8f8; /* Putih abu-abu muda untuk kontras */
+            border: 2px solid #000000; /* Border hitam tebal */
+            border-radius: 10px;
+            padding: 40px;
+            width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Bayangan gelap untuk efek "deathly" */
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #000000;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #990000; /* Aksen merah gelap untuk fokus */
+            box-shadow: 0 0 5px rgba(153, 0, 0, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #000000; /* Hitam untuk tombol */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #990000; /* Merah gelap saat hover */
+        }
+
+        .toggle {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .toggle a {
+            color: #990000;
+            text-decoration: none;
+        }
+
+        .toggle a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hidden class untuk toggle */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sign In Form -->
+        <div id="signin-form">
+            <h2>Sign In</h2>
+            <form>
+                <div class="form-group">
+                    <label for="signin-email">Email:</label>
+                    <input type="email" id="signin-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signin-password">Password:</label>
+                    <input type="password" id="signin-password" required>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <div class="toggle">
+                Belum punya akun? <a href="#" onclick="toggleForm('signup')">Daftar di sini</a>
+            </div>
+        </div>
+
+        <!-- Sign Up / Registration Form -->
+        <div id="signup-form" class="hidden">
+            <h2>Sign Up / Registrasi</h2>
+            <form>
+                <div class="form-group">
+                    <label for="signup-name">Nama Lengkap:</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Konfirmasi Password:</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <button type="submit">Daftar</button>
+            </form>
+            <div class="toggle">
+                Sudah punya akun? <a href="#" onclick="toggleForm('signin')">Masuk di sini</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+            const signinForm = document.getElementById('signin-form');
+            const signupForm = document.getElementById('signup-form');
+            if (formType === 'signup') {
+                signinForm.classList.add('hidden');
+                signupForm.classList.remove('hidden');
+            } else {
+                signupForm.classList.add('hidden');
+                signinForm.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
